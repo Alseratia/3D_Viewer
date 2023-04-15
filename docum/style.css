@@ -1,0 +1,46 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #333;
+	padding: 1em;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	color: rgb(221, 221, 221);
+	padding-block: 0.25em;
+}
+
+h2 {
+	color: rgb(215, 215, 215);
+	padding-block: 0.8em;
+}
+
+p {
+	color: rgb(221, 221, 221);
+	padding-block: 0.5em;
+}
+
+ol {
+	color: rgb(221, 221, 221);
+}
+
+li {
+	margin-block: 0.5em;
+}
+
+img {
+	max-width: 800px;
+	max-height: 600px;
+}
+
+.example {
+	padding-block: 1em;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
