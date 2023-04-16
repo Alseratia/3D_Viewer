@@ -30,16 +30,6 @@ dvi:
 	mkdir build && cp -r $(APPDIRS) build/
 	cd build/code && qmake -makefile QViewer.pro && make
 
-test: 
-	cd tests && rm -rf tests .qmake.stash test.o
-	cd tests && qmake tests.pro && make
-	./tests/tests
-
-gcov_report: test
-	lcov -c -d ./tests -o coverage.info
-	genhtml coverage.info -o gcov_report
-	$(OPEN) ./gcov_report/index.html
-
 clang:
 	cp ../materials/linters/.clang-format .
 	clang-format -n $(SOURSE)
@@ -47,12 +37,6 @@ clang:
 
 check: clang
 	cppcheck $(CHFLAGS) $(SOURSE) tests/test.cpp
-
-valgrind: clean test
-	valgrind --leak-check=full -s ./tests/tests
-
-leaks: clean test
-	CK_FORK=no leaks -atExit -- ./tests/tests
 
 clean:
 	rm -rf build/ gcov_report/
